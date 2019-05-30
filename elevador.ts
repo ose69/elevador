@@ -1,0 +1,3 @@
+class Elevador{
+    pisosTotales:number;
+}
