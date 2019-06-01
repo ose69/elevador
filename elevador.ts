@@ -49,5 +49,5 @@ class Elevador{
             }
         }
     }
-
+//https://github.com/Gilberto-Felipe/elevador.ts/blob/4464596ba845e217bee232f20a818872d1f7437f/elevador.js
 }
