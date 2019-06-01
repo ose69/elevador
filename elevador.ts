@@ -23,31 +23,47 @@ class Elevador{
             return "cerrando puerta";
         }
     }
-    private subir() {
+   /* public subir() {
         if (this.pisoActual===1 &&this.pisoActual<this.pisosTotales) {
             return "subiendo";
         }
     } 
-    private bajar() {
+    public bajar() {
         if (this.pisoActual>1 && this.pisoActual<=this.pisosTotales) {
             return "bajando";
         }
-    }
-    private irA(destino) {
-        if (destino > this.pisosTotales || destino < this.pisosTotales) {
+    }*/
+    public irA(destino) {
+        if (destino>this.pisosTotales||destino<this.pisosTotales) {
             return false;
         }
-        else {
-            if (destino > this.pisoActual) {
+        else{
+            if (destino>this.pisoActual&&destino<this.pisosTotales) {
                 this.subir(destino);
             }
-            else if (destino < this.pisoActual) {
+            else if (destino<this.pisoActual) {
                 this.bajar(destino);
             }
-            else {
-                return 'El destino es el piso actual.';
+            else{
+                return 'el destino es el piso actual|'
             }
         }
     }
-//https://github.com/Gilberto-Felipe/elevador.ts/blob/4464596ba845e217bee232f20a818872d1f7437f/elevador.js
+    public bajar(destino){
+        while(this.pisoActual>destino){
+            this.pisoActual--;
+        }
+        return this.pisoActual;
+    }
+    public subir(destino){
+        while(destino<this.pisosTotales&& destino<this.pisoActual){
+            this.pisoActual++;
+        }
+        return this.pisoActual;
+    }
+
 }
+let elevador= new Elevador(5,false);
+elevador.abrirPuerta();
+elevador.cerrarPuerta();
+elevador.irA();
